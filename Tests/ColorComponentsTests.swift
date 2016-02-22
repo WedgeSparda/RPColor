@@ -53,14 +53,14 @@ class ColorHSBComponentsTests: XCTestCase {
   let controlColor = Color(hue: 0.7, saturation: 0.7, brightness: 0.7, alpha: 1.0)
   
   func testHueComponentIsCorrect() {
-    XCTAssertEqualWithAccuracy(controlColor.hue()!, CGFloat(0.7), accuracy: 0.1, "Hue component of color is wrong")
+    XCTAssertEqualWithAccuracy(controlColor.hue(), CGFloat(0.7), accuracy: 0.1, "Hue component of color is wrong")
   }
   
   func testSaturationComponentIsCorrect() {
-    XCTAssertEqualWithAccuracy(controlColor.saturation()!, CGFloat(0.7), accuracy: 0.1, "Saturation component of color is wrong")
+    XCTAssertEqualWithAccuracy(controlColor.saturation(), CGFloat(0.7), accuracy: 0.1, "Saturation component of color is wrong")
   }
   
   func testBrightnessComponentIsCorrect() {
-    XCTAssertEqualWithAccuracy(controlColor.brightness()!, CGFloat(0.7), accuracy: 0.1, "Brightness component of color is wrong")
+    XCTAssertEqualWithAccuracy(controlColor.brightness(), CGFloat(0.7), accuracy: 0.1, "Brightness component of color is wrong")
   }
 }

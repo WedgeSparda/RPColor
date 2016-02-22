@@ -61,14 +61,10 @@ extension Color {
    
    - returns: RED color component in CGFloat format
    */
-  public func red() -> CGFloat? {
+  public func red() -> CGFloat {
     var fRed:CGFloat = 0
-    
-    if self.getRed(&fRed, green:nil, blue:nil, alpha:nil) == true {
-      return fRed
-    } else {
-      return nil
-    }
+    self.getRed(&fRed, green:nil, blue:nil, alpha:nil)
+    return fRed
   }
   
   /**
@@ -76,12 +72,8 @@ extension Color {
    
    - returns: RED color component hex code in string format
    */
-  public func redHex() -> String? {
-    
-    if let fRed = self.red() {
-      return String(format:"%2X", Int(fRed * 255.0))
-    }
-    return nil
+  public func redHex() -> String {
+    return String(format:"%2X", Int(self.red() * 255.0))
   }
   
   /**
@@ -89,14 +81,10 @@ extension Color {
    
    - returns: GREEN color component in CGFloat format
    */
-  public func green() -> CGFloat? {
+  public func green() -> CGFloat {
     var fGreen:CGFloat = 0
-    
-    if self.getRed(nil, green:&fGreen, blue:nil, alpha:nil) {
-      return fGreen
-    } else {
-      return nil
-    }
+    self.getRed(nil, green:&fGreen, blue:nil, alpha:nil)
+    return fGreen
   }
   
   /**
@@ -104,11 +92,8 @@ extension Color {
    
    - returns: GREEN color component hex code in string format
    */
-  public func greenHex() -> String? {
-    if let fGreen = self.green() {
-      return String(format:"%2X", Int(fGreen * 255.0))
-    }
-    return nil
+  public func greenHex() -> String {
+    return String(format:"%2X", Int(self.green() * 255.0))
   }
   
   /**
@@ -116,14 +101,10 @@ extension Color {
    
    - returns: BLUE color component in CGFloat format
    */
-  public func blue() -> CGFloat? {
+  public func blue() -> CGFloat {
     var fBlue:CGFloat = 0
-    
-    if self.getRed(nil, green:nil, blue:&fBlue, alpha:nil) {
-      return fBlue
-    } else {
-      return nil
-    }
+    self.getRed(nil, green:nil, blue:&fBlue, alpha:nil)
+    return fBlue
   }
   
   /**
@@ -131,21 +112,13 @@ extension Color {
    
    - returns: BLUE color component hex code in string format
    */
-  public func blueHex() -> String? {
-    if let fBlue = self.blue() {
-      return String(format:"%2X", Int(fBlue * 255.0))
-    }
-    return nil
+  public func blueHex() -> String {
+    return String(format:"%2X", Int(self.blue() * 255.0))
   }
   
   
-  public func hex() -> String? {
-    
-    if let redHex = self.redHex(), let greenHex = self.greenHex(), let blueHex = self.blueHex() {
-      return redHex + greenHex + blueHex
-    }
-    
-    return nil
+  public func hex() -> String {
+    return self.redHex() + self.greenHex() + self.blueHex()
   }
   
   
@@ -154,14 +127,10 @@ extension Color {
    
    - returns: ALPHA component in CGFloat format
    */
-  public func alpha() -> CGFloat? {
+  public func alpha() -> CGFloat {
     var fAlpha:CGFloat = 0
-    
-    if self.getRed(nil, green: nil, blue: nil, alpha: &fAlpha) {
-      return fAlpha
-    } else {
-      return nil
-    }
+    self.getRed(nil, green: nil, blue: nil, alpha: &fAlpha)
+    return fAlpha
   }
   
   /**
@@ -169,14 +138,10 @@ extension Color {
    
    - returns: HUE component in CGFloat format
    */
-  public func hue() -> CGFloat? {
+  public func hue() -> CGFloat {
     var fHue:CGFloat = 0
-    
-    if self.getHue(&fHue, saturation: nil, brightness: nil, alpha: nil) {
-      return fHue
-    } else {
-      return nil
-    }
+    self.getHue(&fHue, saturation: nil, brightness: nil, alpha: nil)
+    return fHue
   }
 
   /**
@@ -184,14 +149,10 @@ extension Color {
    
    - returns: SATURATION component in CGFloat format
    */
-  public func saturation() -> CGFloat? {
+  public func saturation() -> CGFloat {
     var fSaturation:CGFloat = 0
-    
-    if self.getHue(nil, saturation: &fSaturation, brightness: nil, alpha: nil) {
-      return fSaturation
-    } else {
-      return nil
-    }
+    self.getHue(nil, saturation: &fSaturation, brightness: nil, alpha: nil)
+    return fSaturation
   }
 
   /**
@@ -199,14 +160,10 @@ extension Color {
    
    - returns: BRIGHTNESS component in CGFloat format
    */
-  public func brightness() -> CGFloat? {
+  public func brightness() -> CGFloat {
     var fBrightness:CGFloat = 0
-    
-    if self.getHue(nil, saturation: nil, brightness: &fBrightness, alpha: nil) {
-      return fBrightness
-    } else {
-      return nil
-    }
+    self.getHue(nil, saturation: nil, brightness: &fBrightness, alpha: nil)
+    return fBrightness
   }
 }
 
