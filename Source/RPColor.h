@@ -6,7 +6,15 @@
 //  Copyright © 2016 Roberto Pastor. All rights reserved.
 //
 
+#ifdef TARGET_OS_MAC
+
+#import <AppKit/AppKit.h>
+
+#else
+
 #import <UIKit/UIKit.h>
+
+#endif
 
 //! Project version number for RPColor.
 FOUNDATION_EXPORT double RPColorVersionNumber;

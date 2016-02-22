@@ -64,7 +64,7 @@ extension Color {
   public func red() -> CGFloat? {
     var fRed:CGFloat = 0
     
-    if self.getRed(&fRed, green:nil, blue:nil, alpha:nil) {
+    if self.getRed(&fRed, green:nil, blue:nil, alpha:nil) == true {
       return fRed
     } else {
       return nil
