@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  RPColor iOS Example
+//  Example
 //
-//  Created by Roberto Pastor Ortiz on 19/2/16.
+//  Created by Roberto Pastor Ortiz on 22/2/16.
 //  Copyright © 2016 Roberto Pastor. All rights reserved.
 //
 
