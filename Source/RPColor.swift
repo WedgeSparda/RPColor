@@ -64,7 +64,7 @@ extension Color {
   public func red() -> CGFloat? {
     var fRed:CGFloat = 0
     
-    if (self.getRed(&fRed, green:nil, blue:nil, alpha:nil)) {
+    if self.getRed(&fRed, green:nil, blue:nil, alpha:nil) {
       return fRed
     } else {
       return nil
@@ -92,7 +92,7 @@ extension Color {
   public func green() -> CGFloat? {
     var fGreen:CGFloat = 0
     
-    if (self.getRed(nil, green:&fGreen, blue:nil, alpha:nil)) {
+    if self.getRed(nil, green:&fGreen, blue:nil, alpha:nil) {
       return fGreen
     } else {
       return nil
@@ -119,7 +119,7 @@ extension Color {
   public func blue() -> CGFloat? {
     var fBlue:CGFloat = 0
     
-    if (self.getRed(nil, green:nil, blue:&fBlue, alpha:nil)) {
+    if self.getRed(nil, green:nil, blue:&fBlue, alpha:nil) {
       return fBlue
     } else {
       return nil
@@ -157,7 +157,7 @@ extension Color {
   public func alpha() -> CGFloat? {
     var fAlpha:CGFloat = 0
     
-    if (self.getRed(nil, green: nil, blue: nil, alpha: &fAlpha)){
+    if self.getRed(nil, green: nil, blue: nil, alpha: &fAlpha) {
       return fAlpha
     } else {
       return nil
@@ -172,7 +172,7 @@ extension Color {
   public func hue() -> CGFloat? {
     var fHue:CGFloat = 0
     
-    if (self.getHue(&fHue, saturation: nil, brightness: nil, alpha: nil)) {
+    if self.getHue(&fHue, saturation: nil, brightness: nil, alpha: nil) {
       return fHue
     } else {
       return nil
@@ -187,7 +187,7 @@ extension Color {
   public func saturation() -> CGFloat? {
     var fSaturation:CGFloat = 0
     
-    if (self.getHue(nil, saturation: &fSaturation, brightness: nil, alpha: nil)) {
+    if self.getHue(nil, saturation: &fSaturation, brightness: nil, alpha: nil) {
       return fSaturation
     } else {
       return nil
@@ -202,7 +202,7 @@ extension Color {
   public func brightness() -> CGFloat? {
     var fBrightness:CGFloat = 0
     
-    if (self.getHue(nil, saturation: nil, brightness: &fBrightness, alpha: nil)) {
+    if self.getHue(nil, saturation: nil, brightness: &fBrightness, alpha: nil) {
       return fBrightness
     } else {
       return nil
