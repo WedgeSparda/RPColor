@@ -31,7 +31,7 @@ import Foundation
 // MARK: - String extension
 
 extension String {
-  public var hexColor: Color? {
+  public var color: Color? {
     let hex = self.stringByTrimmingCharactersInSet(NSCharacterSet.alphanumericCharacterSet().invertedSet)
     return hexToColor(hex)
   }
@@ -48,7 +48,7 @@ extension Color {
    
    - returns: A UIColor or NSColor instance deppending of platform
    */
-  public convenience init?(hexCode hex:String) {
+  public convenience init?(hex:String) {
     
     guard let (alpha, red, green, blue) = hexStringToRGBATuple(hex) else {
       return nil
@@ -76,7 +76,7 @@ extension Color {
    
    - returns: RED color component hex code in string format
    */
-  public func redHexCode() -> String? {
+  public func redHex() -> String? {
     
     if let fRed = self.red() {
       return String(format:"%2X", Int(fRed * 255.0))
@@ -104,7 +104,7 @@ extension Color {
    
    - returns: GREEN color component hex code in string format
    */
-  public func greenHexCode() -> String? {
+  public func greenHex() -> String? {
     if let fGreen = self.green() {
       return String(format:"%2X", Int(fGreen * 255.0))
     }
@@ -131,12 +131,23 @@ extension Color {
    
    - returns: BLUE color component hex code in string format
    */
-  public func blueHexCode() -> String? {
+  public func blueHex() -> String? {
     if let fBlue = self.blue() {
       return String(format:"%2X", Int(fBlue * 255.0))
     }
     return nil
   }
+  
+  
+  public func hex() -> String? {
+    
+    if let redHex = self.redHex(), let greenHex = self.greenHex(), let blueHex = self.blueHex() {
+      return redHex + greenHex + blueHex
+    }
+    
+    return nil
+  }
+  
   
   /**
    ALPHA component of the color in CGFloat format (from 0.0 to 1.0)

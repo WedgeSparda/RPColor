@@ -24,22 +24,26 @@ import XCTest
 
 class ColorRGBComponentsTests: XCTestCase {
   
-  let controlColor = Color(hexCode: "F3F2F1")
+  let controlColor = Color(hex: "F3F2F1")
   
   func testRedComponentIsCorrect() {
-    XCTAssertEqual(controlColor?.redHexCode(), "F3", "Red component of color is wrong")
+    XCTAssertEqual(controlColor?.redHex(), "F3", "Red component of color is wrong")
   }
 
   func testGreenComponentIsCorrect() {
-    XCTAssertEqual(controlColor?.greenHexCode(), "F2", "Green component of color is wrong")
+    XCTAssertEqual(controlColor?.greenHex(), "F2", "Green component of color is wrong")
   }
   
   func testBlueComponentIsCorrect() {
-    XCTAssertEqual(controlColor?.blueHexCode(), "F1", "Blue component of color is wrong")
+    XCTAssertEqual(controlColor?.blueHex(), "F1", "Blue component of color is wrong")
   }
   
   func testAlphaComponentIsCorrect() {
     XCTAssertEqual(controlColor?.alpha(), 1.0, "Alpha component of color is wrong")
+  }
+  
+  func testHexCodeIsCorrect() {
+    XCTAssertEqual(controlColor?.hex(), "F3F2F1", "Color hex code is wrong")
   }
 }
 

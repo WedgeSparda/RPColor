@@ -5,12 +5,6 @@
 [![License](https://img.shields.io/cocoapods/l/RPColor.svg?style=flat)](http://cocoapods.org/pods/RPColor)
 [![Platform](https://img.shields.io/cocoapods/p/RPColor.svg?style=flat)](http://cocoapods.org/pods/RPColor)
 
-## Usage
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Requirements
-
 ## Installation
 
 RPColor is available through [CocoaPods](http://cocoapods.org). To install

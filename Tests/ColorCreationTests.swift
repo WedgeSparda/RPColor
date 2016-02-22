@@ -27,26 +27,26 @@ class ColorCreationTests: XCTestCase {
   let controlColor = Color(red: CGFloat(255/255), green: (0/255), blue: (0/255), alpha: 1)
   
   func testColorCreationWithRGB() {
-    let colorRGB = Color(hexCode: "F00")
+    let colorRGB = Color(hex: "F00")
     
     XCTAssertEqual(controlColor, colorRGB, "Color created with RGB hex code is wrong")
     
   }
   
   func testColorCreationWithRRGGBB() {
-    let colorRRGGBB = Color(hexCode: "FF0000")
+    let colorRRGGBB = Color(hex: "FF0000")
     
     XCTAssertEqual(controlColor, colorRRGGBB, "Color created with RRGGBB hex code is wrong")
   }
   
   func testColorCreationWithAARRGGBB() {
-    let colorAARRGGBB = Color(hexCode: "FFFF0000")
+    let colorAARRGGBB = Color(hex: "FFFF0000")
     
     XCTAssertEqual(controlColor, colorAARRGGBB, "Color created with AARRGGBB hex code is wrong")
   }
   
   func testColorCreationWithInvalidHexCode() {
-    let colorInvalid = Color(hexCode: "THIS IS A BAD COLOR HEX STRING")
+    let colorInvalid = Color(hex: "THIS IS A BAD COLOR HEX STRING")
     
     XCTAssertNil(colorInvalid, "Color created with invalid hex code should be nil")
   }
