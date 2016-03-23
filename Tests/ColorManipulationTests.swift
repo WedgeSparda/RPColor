@@ -22,33 +22,13 @@ import RPColor
 import Foundation
 import XCTest
 
-class ColorCreationTests: XCTestCase {
+class ColorManipulationTests: XCTestCase {
   
   let controlColor = Color(red: CGFloat(255/255), green: (0/255), blue: (0/255), alpha: 1)
-  
-  func testColorCreationWithRGB() {
-    let colorRGB = Color(hex: "F00")
+
+  func testInverseColor() {
+    let color = Color(hex:"00FF00")
     
-    XCTAssertEqual(controlColor, colorRGB, "Color created with RGB hex code is wrong")
-    
+    XCTAssertEqual(color.inverse().hex(), "FF00FF", "Inverse color is wrong")
   }
-  
-  func testColorCreationWithRRGGBB() {
-    let colorRRGGBB = Color(hex: "FF0000")
-    
-    XCTAssertEqual(controlColor, colorRRGGBB, "Color created with RRGGBB hex code is wrong")
-  }
-  
-  func testColorCreationWithAARRGGBB() {
-    let colorAARRGGBB = Color(hex: "FFFF0000")
-    
-    XCTAssertEqual(controlColor, colorAARRGGBB, "Color created with AARRGGBB hex code is wrong")
-  }
-  
-  func testColorCreationWithInvalidHexCode() {
-    let colorInvalid = Color(hex: "THIS IS A BAD COLOR HEX STRING")
-    
-    XCTAssertEqual(colorInvalid.alpha(), Color.clearColor().alpha(), "Color created with invalid hex code should be clear Color")
-  }
-  
 }

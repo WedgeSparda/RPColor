@@ -48,11 +48,13 @@ extension Color {
    
    - returns: A UIColor or NSColor instance deppending of platform
    */
-  public convenience init?(hex:String) {
+  public convenience init(hex:String) {
     
     guard let (alpha, red, green, blue) = hexStringToRGBATuple(hex) else {
-      return nil
+      self.init(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
+      return
     }
+    
     self.init(red: CGFloat(red) / 255, green: CGFloat(green) / 255, blue: CGFloat(blue) / 255, alpha: CGFloat(alpha) / 255)
   }
   
@@ -73,7 +75,7 @@ extension Color {
    - returns: RED color component hex code in string format
    */
   public func redHex() -> String {
-    return String(format:"%2X", Int(self.red() * 255.0))
+    return String(format:"%02X", Int(self.red() * 255.0))
   }
   
   /**
@@ -93,7 +95,7 @@ extension Color {
    - returns: GREEN color component hex code in string format
    */
   public func greenHex() -> String {
-    return String(format:"%2X", Int(self.green() * 255.0))
+    return String(format:"%02X", Int(self.green() * 255.0))
   }
   
   /**
@@ -113,7 +115,7 @@ extension Color {
    - returns: BLUE color component hex code in string format
    */
   public func blueHex() -> String {
-    return String(format:"%2X", Int(self.blue() * 255.0))
+    return String(format:"%02X", Int(self.blue() * 255.0))
   }
   
   
@@ -164,6 +166,17 @@ extension Color {
     var fBrightness:CGFloat = 0
     self.getHue(nil, saturation: nil, brightness: &fBrightness, alpha: nil)
     return fBrightness
+  }
+  
+  /**
+   Inverse Color
+   
+   - returns: Inverse color for this instance
+   */
+  public func inverse() -> Color {
+    var r:CGFloat = 0.0, g:CGFloat = 0.0, b:CGFloat = 0.0, a:CGFloat = 0.0
+    self.getRed(&r, green: &g, blue: &b, alpha: &a)
+    return Color(red: 1.0 - r, green: 1.0 - g, blue: 1.0 - b, alpha: 1.0 - a)
   }
 }
 
