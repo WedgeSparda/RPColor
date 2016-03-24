@@ -48,7 +48,7 @@ class ColorCreationTests: XCTestCase {
   func testColorCreationWithInvalidHexCode() {
     let colorInvalid = Color(hex: "THIS IS A BAD COLOR HEX STRING")
     
-    XCTAssertEqual(colorInvalid.alpha(), Color.clearColor().alpha(), "Color created with invalid hex code should be clear Color")
+    XCTAssertEqual(colorInvalid.alpha(), 0, "Color created with invalid hex code should be clear Color")
   }
   
 }
