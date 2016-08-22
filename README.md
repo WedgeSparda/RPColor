@@ -1,5 +1,7 @@
 # RPColor
 
+[![Join the chat at https://gitter.im/WedgeSparda/RPColor](https://badges.gitter.im/WedgeSparda/RPColor.svg)](https://gitter.im/WedgeSparda/RPColor?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![CI Status](http://img.shields.io/travis/Roberto Pastor/RPColor.svg?style=flat)](https://travis-ci.org/Roberto Pastor/RPColor)
 [![Version](https://img.shields.io/cocoapods/v/RPColor.svg?style=flat)](http://cocoapods.org/pods/RPColor)
 [![License](https://img.shields.io/cocoapods/l/RPColor.svg?style=flat)](http://cocoapods.org/pods/RPColor)
